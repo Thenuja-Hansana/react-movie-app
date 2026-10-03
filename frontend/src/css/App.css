@@ -1,0 +1,45 @@
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2.5rem clamp(1rem, 3vw, 2.5rem) 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Shared grid used by Home and Favourites */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.75rem 1.25rem;
+  width: 100%;
+}
+
+/* Cards fade up as they appear. "backwards" releases the transform
+   once finished so the card hover lift still works. */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.45s var(--ease) backwards;
+}
+
+@media (max-width: 639px) {
+  .main-content {
+    padding-top: 1.5rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 1.25rem 0.9rem;
+  }
+}
