@@ -34,6 +34,7 @@ jobs:
       - name: Build
         env:
           VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
+          BASE_PATH: /react-movie-app/
         run: |
           if [ -z "$VITE_TMDB_API_KEY" ]; then
             echo "::error::Missing VITE_TMDB_API_KEY secret. Add it under Settings > Secrets and variables > Actions."
