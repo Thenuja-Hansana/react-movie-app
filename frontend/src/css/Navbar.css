@@ -27,14 +27,13 @@
   color: transparent;
 }
 
-.navbar-brand:first-child > a::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  background: var(--accent-gradient);
-  box-shadow: 0 0 16px var(--accent-glow);
-  transform: rotate(45deg);
+.navbar-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 9px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 18px -4px var(--accent-glow);
 }
 
 /* Link group (the second .navbar-brand, or .navbar-links) */
@@ -76,6 +75,12 @@
 
   .navbar-brand:first-child > a {
     font-size: 1.15rem;
+  }
+
+  .navbar-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
   }
 
   .nav-link {
