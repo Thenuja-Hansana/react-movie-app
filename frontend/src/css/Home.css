@@ -1,0 +1,116 @@
+.home,
+.Home {
+  width: 100%;
+}
+
+/* Search bar: input and button sit inside one pill */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 2.75rem;
+  padding: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 12px 40px -18px rgba(0, 0, 0, 0.8);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-form:focus-within {
+  border-color: rgba(255, 95, 109, 0.55);
+  box-shadow:
+    0 0 0 4px rgba(229, 9, 20, 0.15),
+    0 12px 40px -18px rgba(0, 0, 0, 0.8);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 1rem 0.75rem 2.9rem;
+  border: none;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a9aab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 1rem center / 20px;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px -8px var(--accent-glow);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s, filter 0.2s;
+}
+
+.search-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -8px var(--accent-glow);
+}
+
+.search-button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Status messages */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.loading::before {
+  content: "";
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-mesage,
+.error-message {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(229, 9, 20, 0.12);
+  border: 1px solid rgba(229, 9, 20, 0.35);
+  color: #ffb3b8;
+  text-align: center;
+}
+
+@media (max-width: 639px) {
+  .search-form {
+    margin-bottom: 1.75rem;
+  }
+
+  .search-button {
+    padding: 0.7rem 1.1rem;
+  }
+}
